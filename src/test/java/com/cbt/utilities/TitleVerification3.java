@@ -8,13 +8,14 @@ import java.util.List;
 
 public class TitleVerification3 {
     public static void main(String[] args) {
-        List<String> urls = Arrays.asList("https://lulugandgeorgia.com",
+        List<String> urls = Arrays.asList("https://luluandgeorgia.com",
                 "https://wayfair.com/", "https://walmart.com", "https://westelm.com/");
         WebDriver driver = BrowserFactory.getDriver("chrome");
 
-        driver.navigate().to("https://lulugandgeorgia.com");
-        String luluTitle = driver.getTitle();
-        System.out.println(luluTitle.toLowerCase().trim());
+        driver.navigate().to("https://luluandgeorgia.com");
+        String luluTitleUnchanged = driver.getTitle();
+        String luluTitle= luluTitleUnchanged.toLowerCase().replaceAll(" ", "");
+        System.out.println(luluTitle);
         String luluUrl = driver.getCurrentUrl();
         System.out.println(luluUrl);
         if(luluUrl.contains(luluTitle)){
@@ -26,8 +27,9 @@ public class TitleVerification3 {
 
         driver = new ChromeDriver();
         driver.get("https://wayfair.com/");
-        String wayfareTitle = driver.getTitle();
-        System.out.println(wayfareTitle.toLowerCase().trim());
+        String wayfareTitleUnchanged = driver.getTitle();
+        String wayfareTitle = wayfareTitleUnchanged.toLowerCase().replaceAll(" ", "");
+        System.out.println(wayfareTitle);
         String wayfareUrl = driver.getCurrentUrl();
         System.out.println(wayfareUrl);
         if(wayfareUrl.contains(wayfareTitle)){
@@ -39,8 +41,9 @@ public class TitleVerification3 {
 
         driver = new ChromeDriver();
         driver.navigate().to("https://walmart.com/");
-        String walmartTitle = driver.getTitle();
-        System.out.println(walmartTitle.toLowerCase().trim());
+        String walmartTitleUnchanged = driver.getTitle();
+        String walmartTitle = walmartTitleUnchanged.toLowerCase().replaceAll(" ", "");
+        System.out.println(walmartTitle);
         String walmartUrl = driver.getCurrentUrl();
         System.out.println(walmartUrl);
         if(walmartUrl.contains(walmartTitle)){
@@ -52,8 +55,9 @@ public class TitleVerification3 {
 
         driver = new ChromeDriver();
         driver.navigate().to("https://westelm.com/");
-        String westelmTitle = driver.getTitle();
-        System.out.println(westelmTitle.toLowerCase().trim());
+        String westelmTitleUnchanged = driver.getTitle();
+        String westelmTitle = westelmTitleUnchanged.toLowerCase().replaceAll(" ", "");
+        System.out.println(westelmTitle);
         String westelmUrl = driver.getCurrentUrl();
         System.out.println(westelmUrl);
         if(westelmUrl.contains(westelmTitle)){
