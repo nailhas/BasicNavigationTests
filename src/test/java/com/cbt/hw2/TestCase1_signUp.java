@@ -5,7 +5,7 @@ import com.cbt.utilities.utils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class TestCase1 {
+public class TestCase1_signUp {
     public static void main(String[] args) {
         WebDriver driver= BrowserFactory.getDriver("chrome");
         assert driver != null;

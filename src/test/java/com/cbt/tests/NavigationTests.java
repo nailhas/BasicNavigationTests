@@ -2,7 +2,6 @@ package com.cbt.tests;
 
 import com.cbt.utilities.BrowserFactory;
 import org.openqa.selenium.WebDriver;
-
 import static com.cbt.utilities.StringUtility.verifyEquals;
 
 public class NavigationTests {
@@ -12,6 +11,7 @@ public class NavigationTests {
         //WebDriver driver = BrowserFactory.getDriver("chrome");
         //WebDriver driver = BrowserFactory.getDriver("firefox");
         WebDriver driver = BrowserFactory.getDriver("edge");
+        assert driver != null;
         driver.manage().window().maximize();
 
         //2. Go to website https://google.com:
